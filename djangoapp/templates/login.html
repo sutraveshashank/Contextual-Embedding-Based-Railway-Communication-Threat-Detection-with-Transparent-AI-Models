@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - My Project{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 380px; /* slightly reduced for balance */
+        border-radius: 18px;
+        background: rgba(0, 0, 0, 0.55);
+        padding: 32px 28px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(10px);
+    }
+
+    .form-container h2 {
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+    }
+
+    label {
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 6px;
+        display: block;
+        font-size: 13px;
+    }
+
+    .form-control {
+        height: 38px;
+        border-radius: 7px;
+        padding: 0 10px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        width: 96%; /* input now fits visually with button */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-primary {
+        background: linear-gradient(90deg, #007bff, #00c6ff);
+        border: none;
+        height: 40px;
+        border-radius: 7px;
+        font-weight: 600;
+        font-size: 15px;
+        transition: 0.3s ease;
+        width: 96%; /* matches input width */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 198, 255, 0.4);
+    }
+
+    .register-link {
+        text-align: center;
+        color: #fff;
+        margin-top: 14px;
+        font-size: 14px;
+    }
+
+    .register-link a {
+        color: #c77dff;
+        text-decoration: none;
+        font-weight: 600;
+        background: rgba(100, 0, 255, 0.4);
+        padding: 2px 7px;
+        border-radius: 6px;
+    }
+
+    .register-link a:hover {
+        background: rgba(100, 0, 255, 0.7);
+        color: #fff;
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="form-container">
+        <h2>Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Enter username" class="form-control" required>
+
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Enter password" class="form-control" required>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <div class="register-link">
+            Don’t have an account? <a href="{% url 'register' %}">Register here</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block title %}Prediction - Secure Communication Detection{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-size: cover;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .card {
+        max-width: 900px; /* increased width */
+        padding: 40px 50px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        color: #fff;
+        text-align: center;
+        transition: 0.4s ease;
+        overflow: hidden;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        font-weight: 600;
+        font-size: 1.8rem;
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        margin-bottom: 25px;
+    }
+
+    label {
+        font-weight: 500;
+        color: #f1f1f1;
+        margin-bottom: 8px;
+        display: block;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        height: 42px;
+        border: none;
+        outline: none;
+        padding-left: 12px;
+        margin-bottom: 18px;
+        font-size: 15px;
+        background: rgba(255,255,255,0.85);
+        color: #333;
+        transition: 0.3s ease;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 8px #00c6ff;
+    }
+
+    .btn-success {
+        width: 100%;
+        height: 44px;
+        border-radius: 8px;
+        border: none;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-size: 15px;
+        color: white;
+        background: linear-gradient(90deg, #00c6ff, #007bff);
+        transition: all 0.3s ease;
+    }
+
+    .btn-success:hover {
+        background: linear-gradient(90deg, #007bff, #00c6ff);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(0,198,255,0.4);
+    }
+
+    .scroll-table {
+        overflow-x: auto;
+        margin-top: 25px;
+        background: rgba(255,255,255,0.9);
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        max-height: 400px;  /* limit vertical height */
+        overflow-y: auto;
+    }
+
+    table {
+        color: #2c3e50 !important;
+        font-size: 15px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        white-space: nowrap;
+        padding: 8px 12px;
+        text-align: center;
+    }
+
+    th {
+        background: #007bff;
+        color: #fff;
+        position: sticky;
+        top: 0;
+    }
+</style>
+
+<center>
+<div class="card mx-auto">
+    <h1>Upload Test Data CSV for Prediction</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="file">Select CSV File</label>
+            <input type="file" name="file" id="file" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Predict</button>
+    </form>
+
+    {% if prediction_table %}
+        <h2 class="text-center mt-4 mb-3">Prediction Results</h2>
+        <div class="scroll-table">
+            {{ prediction_table|safe }}
+        </div>
+    {% endif %}
+</div>
+</center>
+{% endblock %}

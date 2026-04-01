@@ -1,0 +1,35 @@
+operator,call_duration_seconds,customer_transcript,Predicted_output
+Airtel,700,I can't receive international calls. Please help.,negative
+Glo,335,My network has been very poor in Kano. I can't make calls or browse.,positive
+MTN,549,My network has been very poor in Kano. I can't make calls or browse.,neutral
+Glo,789,My bill is too high this month. I need a breakdown.,negative
+Airtel,325,My network has been very poor in Abuja. I can't make calls or browse.,positive
+Glo,881,I recharged 100 naira but didn't receive the data bundle.,neutral
+Glo,757,How do I stop these annoying promotional messages?,negative
+Airtel,892,Why am I being charged for services I didn't subscribe to?,neutral
+MTN,678,How do I stop these annoying promotional messages?,neutral
+MTN,208,I want to port my number to another network. What's the process?,negative
+MTN,352,I want to port my number to another network. What's the process?,negative
+Airtel,630,My network has been very poor in Enugu. I can't make calls or browse.,negative
+MTN,616,My data finishes too quickly. I need an explanation.,neutral
+Glo,71,My data finishes too quickly. I need an explanation.,neutral
+Airtel,131,My bill is too high this month. I need a breakdown.,neutral
+Glo,717,I was promised 4G network but I'm only getting 3G.,negative
+MTN,205,My network has been very poor in Ilorin. I can't make calls or browse.,positive
+9mobile,578,Why am I being charged for services I didn't subscribe to?,neutral
+Airtel,188,My SIM card is not working. It shows no service.,neutral
+Airtel,195,Why am I being charged for services I didn't subscribe to?,neutral
+MTN,408,My SIM card is not working. It shows no service.,neutral
+Airtel,262,I want to port my number to another network. What's the process?,neutral
+MTN,273,I want to port my number to another network. What's the process?,positive
+Airtel,727,My data finishes too quickly. I need an explanation.,negative
+Airtel,144,I was promised 4G network but I'm only getting 3G.,positive
+MTN,406,Why am I being charged for services I didn't subscribe to?,neutral
+MTN,142,I want to port my number to another network. What's the process?,neutral
+Airtel,312,How do I stop these annoying promotional messages?,neutral
+Airtel,326,My bill is too high this month. I need a breakdown.,neutral
+Airtel,143,I want to port my number to another network. What's the process?,negative
+Airtel,268,I recharged 100 naira but didn't receive the data bundle.,neutral
+Glo,594,My network has been very poor in Kaduna. I can't make calls or browse.,positive
+Glo,310,My bill is too high this month. I need a breakdown.,positive
+9mobile,220,I want to port my number to another network. What's the process?,neutral
